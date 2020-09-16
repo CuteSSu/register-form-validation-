@@ -90,20 +90,6 @@
     return YES;
 }
 
-// 생년월일 정규식: 숫자, 8자리
-- (BOOL)checkBirth:(NSString*)text{
-    
-    const char *tmp = [text cStringUsingEncoding:NSUTF8StringEncoding];
-    if (text.length != strlen(tmp)){
-        return NO;}
-    
-    NSString *check = @"^[0-9]{1,8}";
-    NSRange match = [text rangeOfString:check options:NSRegularExpressionSearch];
-    if (NSNotFound == match.location){
-        return NO;}
-    return YES;
-}
-
 - (BOOL) textField: (UITextField *)theTextField shouldChangeCharactersInRange:(NSRange)range replacementString: (NSString *)string {
 
     if(idEmail == theTextField){
